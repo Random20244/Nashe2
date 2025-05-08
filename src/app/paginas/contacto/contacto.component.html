@@ -1,1 +1,5 @@
-<p>contacto works!</p>
+<form [formGroup]="miFormulario">
+    <label for="email">Email:</label>
+    <input id="email" FormCrontrolName="email">
+    <button [disabled]="miFormulario.invalid">Enviar</button>
+</form>

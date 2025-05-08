@@ -8,8 +8,8 @@ import { Producto } from '../modelos/produc.model';
 export class CarritoService {
   private carritoSubject = new BehaviorSubject<{ producto: Producto; cantidad: number }[]>([]);
   carrito$ = this.carritoSubject.asObservable();
-
-  agregarAlCarrito(producto: Producto) {
+  
+agregarAlCarrito(producto: Producto) {
     const productos = this.carritoSubject.getValue();
     const encontrado = productos.find(p => p.producto.id === producto.id);
     if (encontrado) {
@@ -17,17 +17,17 @@ export class CarritoService {
     } else {
       this.carritoSubject.next([...productos, { producto, cantidad: 1 }])
     }
-  }
+}
 
-  eliminarDelCarrito(productoId: number) {
+eliminarDelCarrito(productoId: number) {
     const productos = this.carritoSubject.getValue().filter(p => p.producto.id !== productoId)
     this.carritoSubject.next(productos)
-  }
+}
 
-  vaciarCarrito() {
+vaciarCarrito() {
     this.carritoSubject.next([])
-  }
+}
 
 
-  constructor() { }
+constructor() { }
 }
