@@ -25,7 +25,7 @@ agregarCantidad(index:number){
   this.productoEnCarrito [index].cantidad++;
 };
 
-quitarCantidad(index: number){
+quitarCantidad(index:number){
   if(this.productoEnCarrito[index].cantidad > 1){
     this.productoEnCarrito[index].cantidad--;
   }

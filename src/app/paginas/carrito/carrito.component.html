@@ -5,6 +5,7 @@
       <th>Nombre</th>
       <th>Descripcion</th>
       <th>Precio</th>
+      <th>Total</th>
       <th>Cantidad</th>
       <th>Acciones</th>
     </tr>
@@ -15,18 +16,19 @@
         <td>{{item.producto.nombre}}</td>
         <td>{{item.producto.descripcion}}</td>
         <td>{{item.producto.precio | currency }}</td>
+        <td>{{item.producto.precio * item.cantidad}}</td>
         <td>
-            <button (click)="eliminarProducto(i)">-</button>
+            <button (click)="quitarCantidad(i)">-</button>
             {{item.cantidad}}
-            <button (click)="eliminarProducto(i)">+</button>
+            <button (click)="agregarCantidad(i)">+</button>
         </td>
         <td>
-            <button (click)="eliminarProducto(item.producto.id)">Eliminar</button>
+            <button (click)="eliminarProducto(item.producto.id)" style="background-color: rgb(204, 26, 26);">Eliminar</button>
         </td>
       </tr>
     </tbody>
 </table>
 
 <div *ngIf="productoEnCarrito.length > 0">
-    <button (click)="realizarCompra()" class="btn btn-suces">Realizar compra</button>
+    <button (click)="realizarCompra()" class="btn btn-suces" style="background-color: rgb(3, 194, 44);">Realizar Compra</button>
 </div>

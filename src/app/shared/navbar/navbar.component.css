@@ -1,7 +1,4 @@
-.navbar{
-    background-color:rgba(207, 191, 169, 0.37)
-}
 .nav-item{
-    background-color: aqua;
-
+    color: rgb(255, 255, 255);
+background-color: rgb(102, 10, 10);
 }

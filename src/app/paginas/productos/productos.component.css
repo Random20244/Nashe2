@@ -1,9 +1,11 @@
 /*Estilos Generales*/
-body{
-    background-color: aquamarine;
-    color:azure;
+.body{
+    background-color: rgb(1, 168, 245);
+    color:rgb(14, 240, 240);
     font-family:arial,sans-serif;
 }
+
+
 
 /*Contenedor de las tarjetas*/
 .card-container{

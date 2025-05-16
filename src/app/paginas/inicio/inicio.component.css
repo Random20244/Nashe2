@@ -1,0 +1,16 @@
+
+.card-container{
+    display: flex;
+    justify-content: center; 
+    gap: 20px; 
+    flex-wrap: wrap; 
+    padding: 20px;
+}
+.card{
+    width: 18rem;
+    background-color: rgb(93, 4, 196);
+    color: black;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
