@@ -1,0 +1,20 @@
+<h1 style="color: rgba(202, 202, 2, 0.918);">Lista de Favoritos</h1>
+
+<p *ngIf="productosEnFavorito.length===0">
+    no se encuentran productos en favoritos ( ˙꒳​˙ )
+</p>
+
+<div class="card-container">
+    <ng-container *ngIf="productosEnFavorito.length > 0">
+        <ng-container *ngFor="let item of productosEn; let i = index">
+            <div class ="card">
+                <img [src]="item.producto.imagen" alt="{{item.producto.nombre}}" class="product-image">
+                <h2>{{item.producto.nombre}}</h2>
+                <p class="scroll-text">{{item.producto.descripcion}}</p>
+                <p>Precio: ${{item.producto.precio}}</p>
+                <button type="button" id="boton-card" class="btn btn-outline-primary" (click)="agregar(item.producto, item.producto.id)">Agregar al carrito</button>
+                <button type="button" id="fav-card" class="btn btn-outline-primary" class="deseados" (click)="quitarDeseados(item.producto.id)">Eliminar de Favoritos</button>
+            </div>
+        </ng-container>
+    </ng-container>
+</div>
