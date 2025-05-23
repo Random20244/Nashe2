@@ -6,14 +6,14 @@
 
 <div class="card-container">
     <ng-container *ngIf="productosEnFavorito.length > 0">
-        <ng-container *ngFor="let item of productosEn; let i = index">
+        <ng-container *ngFor="let item of productosEnFavorito; let i = index">
             <div class ="card">
-                <img [src]="item.producto.imagen" alt="{{item.producto.nombre}}" class="product-image">
-                <h2>{{item.producto.nombre}}</h2>
-                <p class="scroll-text">{{item.producto.descripcion}}</p>
-                <p>Precio: ${{item.producto.precio}}</p>
-                <button type="button" id="boton-card" class="btn btn-outline-primary" (click)="agregar(item.producto, item.producto.id)">Agregar al carrito</button>
-                <button type="button" id="fav-card" class="btn btn-outline-primary" class="deseados" (click)="quitarDeseados(item.producto.id)">Eliminar de Favoritos</button>
+                <img [src]="item.productos.imagen" alt="{{item.productos.nombre}}" class="product-image">
+                <h2>{{item.productos.nombre}}</h2>
+                <p class="scroll-text">{{item.productos.descripcion}}</p>
+                <p>Precio: ${{item.productos.precio}}</p>
+                <button type="button" id="boton-card" class="btn btn-outline-primary" (click)="agregar(item.productos, item.productos.id)">Agregar al carrito</button>
+                <button type="button" id="fav-card" class="btn btn-outline-primary" class="favoritos" (click)="quitarFavorito(item.productos.id)">Eliminar de Favoritos</button>
             </div>
         </ng-container>
     </ng-container>

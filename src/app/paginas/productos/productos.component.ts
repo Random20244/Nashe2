@@ -3,6 +3,7 @@ import { CommonModule} from '@angular/common';
 import { Producto } from '../../modelos/produc.model';
 import { CarritoService } from '../../servicio/carrito.service';
 import { RouterModule } from '@angular/router';
+import { FavoritoService } from '../../servicio/favorito.service';
 
 @Component({
   selector: 'app-productos',
@@ -24,7 +25,7 @@ Productos: Producto []=[
   {id: 9 ,nombre:'Gato Muehehe' ,descripcion:"Un gato tambien famoso por su caracteristica mas popular, su cara muy tierna, haciendonos recoradar una risita muy tierna y graciosa." ,precio:29000 ,disponibilidad:true ,imagen:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ15hBGa0ew68jbfMzdDTzB_03aaMMMLl7opoiJWevMukcJh-eVvxpo8LbU0MXm7oUjZoY&usqp=CAU'}
 ]
   
-constructor(private carritoService: CarritoService){}
+constructor(private carritoService: CarritoService, private favoritoService: FavoritoService){}
   //metodo para agregar un producto al carrito
   agregar(productos: Producto){
     this.carritoService.agregarAlCarrito(productos)
@@ -32,5 +33,9 @@ constructor(private carritoService: CarritoService){}
  
   };
 
-
+  agregarFavoritos(productos: Producto){
+  this.favoritoService.agregarFavorito(productos)
+  alert('Se agrego a favoritos :]')
+  
+  };
 };

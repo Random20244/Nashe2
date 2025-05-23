@@ -18,7 +18,7 @@ constructor(private carritoService: CarritoService){};
 ngOnInit(): void {
   //Escucha los cambios en el carrito para actualizar la cantidad total de productos
   this.carritoService.carrito$.subscribe((productos: {producto: Producto,cantidad : number }[])=>{
-    this.cantidadProductos = productos.reduce((total,item)=>total + item.cantidad,0)//Suma la cantidad de productos
+    this.cantidadProductos=productos.reduce((total,item)=>total + item.cantidad,0)//Suma la cantidad de productos
   })
 };
 

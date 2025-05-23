@@ -16,21 +16,21 @@ constructor(private CarritoService: CarritoService, private FavoritoService:Favo
   
   productosEnFavorito:{productos:Producto}[] = [];
  
-  ngOnInit(): void {
-    this.FavoritoService.favorito$.subscribe((productos))=>{
-   this.productosEnFavorito=productos   
-    }
-  };
+  ngOnInit(): void{
+    this.FavoritoService.favorito$.subscribe((productos)=>{
+      this.productosEnFavorito=productos
+    })
+  }
   
   agregar(productos:Producto, productosId:number){
     this.CarritoService.agregarAlCarrito(productos)
-    alert('Se agrego a sus favoritos ´•ω•̥`')
+    alert('Se agrego al carrito ´•ω•̥`')
     this.FavoritoService.eliminarFavorito(productosId)    
   };
   
   quitarFavorito(productosId:number){
     this.FavoritoService.eliminarFavorito(productosId)
-    alert('Se ah quitado de sus favoditos T⌓T')
+    alert('Se ah quitado de sus favoritos T⌓T')
   };
 
 }

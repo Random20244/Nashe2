@@ -48,7 +48,7 @@ box-shadow: 0px 8px 16px rgba(rgb(16, 3, 202), rgb(123, 255, 0), rgb(89, 0, 255)
 
 /*Boton estilizado*/
 .card .btn{
-    background-color: rgb(1, 168, 29);
+    background-color: rgb(2, 194, 27);
     color: rgb(0, 0, 0);
     border: none;
     transition: background 0.3s ease-in-out;
