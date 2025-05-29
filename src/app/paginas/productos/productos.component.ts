@@ -35,7 +35,7 @@ constructor(private carritoService: CarritoService, private favoritoService: Fav
 
   agregarFavoritos(productos: Producto){
   this.favoritoService.agregarFavorito(productos)
-  alert('Se agrego a favoritos :]')
+ 
   
   };
 };
