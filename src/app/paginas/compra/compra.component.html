@@ -1,1 +1,13 @@
-<p>compra works!</p>
+<h2 class="text-center mb-4">Formulario de Compra</h2>
+
+<form [formGroup]="formularioCompra" (ngSumbit)="finalizarCompra" class="mx-auto" style="max-width: 600px;"></form>
+<!--Campos del formulario-->
+<div class="row g-3 mb-3">
+    <div class="cold-md-6">
+        <label for="nombre" class="form-label fw-semibold">Nombre <span class="text-danger">*</span></label>
+        <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+            <input id="nombre" formControlName="nombre" class="form-control" placeholder="Tu nombre completo"/>
+        </div>
+    </div>
+</div>
