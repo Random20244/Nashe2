@@ -1,5 +1,12 @@
-<table class="table">
-  <thead>
+<h1 class="text-center my-4">Carrito de compras</h1>
+
+<div *ngIf="productoEnCarrito.length === 0" class="alert alert-warning text-center">
+  <p>No hay productos en el carrito</p>
+</div>
+
+<div *ngIf="productoEnCarrito.length > 0" class="container">
+<table class="table table-hover table-bordered align-middle text-center">
+  <thead class="table-dark">
     <tr >
       <th>Imagen</th>
       <th>Nombre</th>
@@ -12,23 +19,27 @@
   </thead>
     <tbody>
       <tr *ngFor="let item of productoEnCarrito, let i = index">
-        <td><img [src]="item.producto.imagen" alt="{{item.producto.nombre}}" style="width: 50px; height: 50px;"></td>
-        <td>{{item.producto.nombre}}</td>
+        <td><img [src]="item.producto.imagen" alt="{{item.producto.nombre}}" class="img-thumbnail" style="width: 70px; height: 70px;"></td>
+        <td class="fw-bold">{{item.producto.nombre}}</td>
         <td>{{item.producto.descripcion}}</td>
         <td>{{item.producto.precio | currency }}</td>
         <td>{{item.producto.precio * item.cantidad}}</td>
         <td>
-            <button (click)="quitarCantidad(i)">-</button>
-            {{item.cantidad}}
-            <button (click)="agregarCantidad(i)">+</button>
+          <div class="btn-group" role="group" aria-label="Cantidad">
+            <button class="btn btn-outline-danger btn-sm" (click)="quitarCantidad(i)">-</button>
+            <span class="px-2">{{item.cantidad}}</span>
+            <button class="btn btn-outline-success btn-sm" (click)="agregarCantidad(i)">+</button>
+          </div>
         </td>
         <td>
-            <button (click)="eliminarProducto(item.producto.id)" style="background-color: rgb(204, 26, 26);">Eliminar</button>
+            <button class="btn btn-outline-danger btn-sm" (click)="eliminarProducto(item.producto.id)" style="background-color: rgb(204, 26, 26);"><i class="bi bi-trash"></i>Eliminar</button>
         </td>
       </tr>
     </tbody>
 </table>
 
-<div *ngIf="productoEnCarrito.length > 0">
-    <button (click)="realizarCompra()" class="btn btn-suces" style="background-color: rgb(3, 194, 44);">Realizar Compra</button>
+<div class="text-end mt-4" *ngIf="productoEnCarrito.length > 0">
+  <h4 class="fw-bold">Total:{{calcularTotal()}}</h4>
+    <button class="btn btn-primary mt-2" (click)="irAFormularioCompra()" style="background-color: rgb(3, 194, 44);"><i class="bi bi-card-check"></i>Realizar Compra</button>
+</div>
 </div>
