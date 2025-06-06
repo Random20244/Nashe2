@@ -96,6 +96,13 @@
             Debe seleccionar metodo de Pago
         </div>
     </div>
+    <div class="d-felx justify-content-between align-item-center my-4">
+        <div>
+         <p>Envio:${{envio.toFixed(2)}}</p>
+         <p><strong>Total a pagar ${{calcularTotal()}}</strong></p>
+       </div>   
+       <button type="submit" class="btn btn-primary">Finalizar Compra</button>
+    </div>
 </form>
 
 <!--Modal PDF-->
