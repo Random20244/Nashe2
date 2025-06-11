@@ -62,9 +62,9 @@ export class CompraComponent implements OnInit {
   const subtotal = this.carritoSevice.obtenerTotal();//Obtiene subtotal del carrito
   this.total = subtotal+this.envio
   return this.total
-}
+ }
 
-//Prepara los datos para la factura con cliente,productos,totales y fecha
+ //Prepara los datos para la factura con cliente,productos,totales y fecha
  emitirFactura():void{
  const datosCliente= this.formularioCompra.value; //Datos ingresados del formulario
  const productos= this.carritoSevice.obtenerProductos(); //Productos del carrito
@@ -82,6 +82,7 @@ export class CompraComponent implements OnInit {
  //Marca que la factura fue generada
  this.facturaGenerada=true;
  }
+
  //Metodo que se ejecuta al finalizar la compra(click al boton)
  //Verifica valides del formulario, genera factura y muestra PDF 
  finalizarCompra():void{
@@ -90,12 +91,11 @@ export class CompraComponent implements OnInit {
     this.generarPDFModal(); // Genera y muestra el PDF en modal 
   }else{
     this.formularioCompra.markAllAsTouched(); //Marca todos los campos como tocados 
-  }
+  } 
  }
 
-
-//Genera el PDF con jsPDF y crea la URL para mostrar el iframe dentro del modal
-generarPDFModal():void{
+ //Genera el PDF con jsPDF y crea la URL para mostrar el iframe dentro del modal
+ generarPDFModal():void{
   if(!this.factura)return; //Si no hay factura, no hace nada 
   const doc = new jsPDF(); //Crea instancia de jsPDF
 
@@ -104,7 +104,7 @@ generarPDFModal():void{
   doc.text('Factura de Compra',14,20)
 
   doc.setFontSize(12)
-  doc.text(`Fecha: ${this.factura.feha.toLocaleString()}`,14,30)
+  doc.text(`Fecha: ${this.factura.fecha.toLocaleString()}`,14,30)
 
   //Informacion del cliente 
   doc.text('Cliente:',14,40)
@@ -124,13 +124,13 @@ generarPDFModal():void{
   this.factura.productos.forEach((item:any, index:number)=> {
     y += 10;
     doc.text(
-      `${index+1}. ${item.producto.nombre} - Cantidad: ${item.cantidad} - Precio: ${item.producto.precio.toFixed(2)} - Subtotal: $${(item.producto.precio * item.cantidad).toFixed(2)}`,14,y
+      `${index+1}, ${item.producto.nombre} - Cantidad: ${item.cantidad} - Precio: ${item.producto.precio.toFixed(2)} - Subtotal: $${(item.producto.precio * item.cantidad).toFixed(2)}`,14,y
     )
 
   })
 
   //Costos finales 
-  y+= 10;
+  y += 10;
   doc.text(`Costo de Envio: ${this.factura.envio.toFixed(2)}`,14,y);
   y += 10;
   doc.text(`Total a Pagar: $${this.factura.total.toFixed(2)}`,14,y);
@@ -141,7 +141,7 @@ generarPDFModal():void{
 
   //Abre el modal que contine el PDF 
   this.mostrarModal=true;
- }
+  }
 
  //Metodo para cerrar el modal y liberar la URL del PDF para evitar fugas de memoria 
  cerrarModal():void{
@@ -157,7 +157,7 @@ generarPDFModal():void{
  imprimirPDF():void{
   //Obtiene la referencia al elemento iframe del DOM mediante su ID 'pdfIframe'
   //Puede devolver null si no se encuentra el elemento
-  const iframe:HTMLIFrameElement | null = document.getElementById('pdfFrame') as HTMLIFrameElement
+  const iframe:HTMLIFrameElement | null = document.getElementById('pdfIframe') as HTMLIFrameElement
 
   //Verifica que el iframe exista y que tenga un objeto contenWindow valido
   if(iframe && iframe.contentWindow){
