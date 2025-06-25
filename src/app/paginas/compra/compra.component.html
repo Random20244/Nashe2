@@ -1,6 +1,6 @@
 <h2 class="text-center mb-4">Formulario de Compra</h2>
 
-<form [formGroup]="formularioCompra" (ngSumbit)="finalizarCompra()" class="mx-auto" style="max-width: 600px;">
+<form [formGroup]="formularioCompra" (ngSubmit)="finalizarCompra()" class="mx-auto" style="max-width: 600px;">
     <!--Campos del formulario-->
     <div class="row g-3 mb-3">
         <div class="col-md-6">
@@ -93,15 +93,15 @@
         </select>
         <div *ngIf="formularioCompra.get('metodoPago')?.touched && formularioCompra.get('metodoPago')?.invalid"
             class="form-text text-danger">
-            Debe seleccionar metodo de Pago
+            Debe seleccionar un metodo de Pago
         </div>
     </div>
     <div class="d-felx justify-content-between align-item-center my-4">
         <div>
-         <p>Envio:${{envio.toFixed(2)}}</p>
-         <p><strong>Total a pagar ${{calcularTotal()}}</strong></p>
-       </div>   
-       <button type="submit" class="btn btn-primary">Finalizar Compra</button>
+            <p>Envio:${{envio.toFixed(2)}}</p>
+            <p><strong>Total a pagar ${{calcularTotal()}}</strong></p>
+        </div>
+        <button type="submit" class="btn mi-boton">Finalizar Compra</button>
     </div>
 </form>
 
@@ -114,17 +114,16 @@
                 <button type="button" class="btn-close" aria-label="Cerrar" (click)="cerrarModal"></button>
             </div>
             <div class="modal-body p-0" style="height: 80vh;">
-                <iframe *ngIf="pdfSrc" [src]="pdfSrc" id="pdfIframe"
-                style="width: 100%; height: 100%; border: none;"></iframe>
+                <iframe *ngIf="pdfSrc" [src]="pdfSrc" id="pdfIframe" style="width: 100%; height: 100%; border: none;"></iframe>
             </div>
-             <div class="modal-footer">
-              <button type="button" class="btn btn-success" (click)="imprimirPDF()">
-                Imprimir
-               </button>
-              <button type="button" class="btn btn-secondary" (click)="cerrarModal()">
-                Cerrar
-              </button>
-           </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" (click)="imprimirPDF()">
+                    Imprimir
+                </button>
+                <button type="button" class="btn btn-secondary" (click)="cerrarModal()">
+                    Cerrar
+                </button>
+            </div>
         </div>
     </div>
 </div>

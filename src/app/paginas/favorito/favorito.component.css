@@ -56,8 +56,8 @@ box-shadow: 0px 8px 16px rgba(rgb(16, 3, 202), rgb(123, 255, 0), rgb(89, 0, 255)
 background-color: rgb(247, 112, 2);
 }
 
-.fav-card{
-    background-color: rgb(21, 247, 0);
+.fav-card .btn {
+    background-color: rgb(247, 16, 0);
     color: rgb(0, 0, 0);
     border: none;
     transition: background 0.3s ease-in-out;

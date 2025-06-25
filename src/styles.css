@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+html, body{ height: 100%;}
+body{
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-image: url(https://wallpapers.com/images/featured/gato-divertido-v24i6v24vmtk4ygu.jpg);
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+/*Para que se muestre bien: background-repeat:no repeat
+background-size:cover
+background-position:center
+background-attachment:fixed*/
