@@ -1,0 +1,60 @@
+.quienes-somos {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+  background-color: #07ffd6; 
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(104, 8, 8, 0.541);
+}
+
+.quienes-somos h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.quienes-somos p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.equipo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.miembro {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  max-width: 220px;
+  transition: transform 0.3s ease;
+}
+
+.miembro:hover {
+  transform: translateY(-5px);
+}
+
+.miembro img {
+  width: 100%;
+  border-radius: 50%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.miembro h4 {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.miembro span {
+  font-size: 0.9rem;
+  color: #888;
+}
+
