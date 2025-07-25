@@ -13,7 +13,7 @@
                 <p class="scroll-text">{{item.productos.descripcion}}</p>
                 <p>Precio: ${{item.productos.precio}}</p>
                 <button type="button" id="boton-card" class="btn btn-outline-primary" (click)="agregar(item.productos, item.productos.id)">Agregar al carrito</button>
-                <button type="button" id="fav-card" class="btn btn-outline-primary" class="favoritos" (click)="quitarFavorito(item.productos.id)">Eliminar de Favoritos</button>
+                <button type="button" id="fav-card" class="boton btn btn-outline-primary" class="favoritos" (click)="quitarFavorito(item.productos.id)">Eliminar de Favoritos</button>
             </div>
         </ng-container>
     </ng-container>

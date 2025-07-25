@@ -18,13 +18,13 @@
     Somos un equipo apasionado por los gatos sillys, esto nos ah llevado a crear negocios por todo el mundo con tal de compartir nuestra experiencia,felicidad y risas con toda la gente del mundo.
 
   </p>
-<!--
+
   <div class="equipo">
-    <div class="quienes-somos" *ngFor="let quienes-somos of equipo">
-      <h4>{{ quienes-somos.nombre }}</h4>
-      <span>{{ quienes-somos.rol }}</span>
-      <img [src]="quienes-somos.foto" [alt]="quienes-somos.nombre">
-    </div>
+    <ng-container class="quienes-somos" *ngFor="let quienessomos of QuienesSomos">
+      <div class="kronos"><h4>{{ quienessomos.nombre }}</h4>
+      <span>{{ quienessomos.rol }}</span>
+      <br><img [src]="quienessomos.foto" [alt]="quienessomos.nombre">
+      </div>
+    </ng-container>
   </div>
 </section>
--->
