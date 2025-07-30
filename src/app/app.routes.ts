@@ -7,6 +7,7 @@ import { ContactoComponent } from './paginas/contacto/contacto.component';
 import { ProductosComponent } from './paginas/productos/productos.component';
 import { FavoritoComponent } from './paginas/favorito/favorito.component';
 import { CompraComponent } from './paginas/compra/compra.component';
+import { RegistroComponent } from './autenticacion/registro/registro.component';
 
 export const routes: Routes = [
     {path:'',redirectTo:'/inicio',pathMatch:'full'},
@@ -25,6 +26,10 @@ export const routes: Routes = [
 
     {path: 'favorito',component:FavoritoComponent},
 
-    {path: 'compra',component:CompraComponent}
+    {path: 'compra',component:CompraComponent},
+
+    {path: 'inicio-sesion',component:InicioComponent},
+
+    {path: 'registro',component:RegistroComponent}
     
 ];

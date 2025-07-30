@@ -19,7 +19,7 @@
 /*Estilos para la tarjeta*/
 .card{
     width: 18rem;
-    background-color: rgb(252, 92, 0);
+    background-color: rgb(109, 7, 100);
     color: rgb(0, 0, 0);
     border-radius: 10px;
     overflow: hidden;
@@ -48,7 +48,7 @@ box-shadow: 0px 8px 16px rgba(rgb(16, 3, 202), rgb(123, 255, 0), rgb(89, 0, 255)
 
 /*Boton estilizado*/
 .card .btn{
-    background-color: rgb(2, 194, 27);
+    background-color: rgb(202, 122, 17);
     color: rgb(0, 0, 0);
     border: none;
     transition: background 0.3s ease-in-out;
