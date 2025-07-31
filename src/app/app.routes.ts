@@ -7,7 +7,8 @@ import { ContactoComponent } from './paginas/contacto/contacto.component';
 import { ProductosComponent } from './paginas/productos/productos.component';
 import { FavoritoComponent } from './paginas/favorito/favorito.component';
 import { CompraComponent } from './paginas/compra/compra.component';
-import { RegistroComponent } from './autenticacion/registro/registro.component';
+import { RegistroComponent } from './paginas/registro/registro.component';
+import { InicioSesionComponent } from './paginas/inicio-sesion/inicio-sesion.component';
 
 export const routes: Routes = [
     {path:'',redirectTo:'/inicio',pathMatch:'full'},
@@ -28,7 +29,7 @@ export const routes: Routes = [
 
     {path: 'compra',component:CompraComponent},
 
-    {path: 'inicio-sesion',component:InicioComponent},
+    {path: 'inicio-sesion',component:InicioSesionComponent},
 
     {path: 'registro',component:RegistroComponent}
     
