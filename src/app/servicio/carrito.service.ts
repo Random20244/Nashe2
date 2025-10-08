@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Producto } from '../modelos/produc.model';
+import { Productos } from '../modelos/produc.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CarritoService {
-  private carritoSubject = new BehaviorSubject<{ producto: Producto; cantidad: number }[]>([]);
+  private carritoSubject = new BehaviorSubject<{ producto: Productos; cantidad: number }[]>([]);
   carrito$ = this.carritoSubject.asObservable();
   
-agregarAlCarrito(producto: Producto) {
+agregarAlCarrito(producto: Productos) {
     const productos = this.carritoSubject.getValue();
     const encontrado = productos.find(p => p.producto.id === producto.id);
     if (encontrado) {
@@ -43,7 +43,7 @@ actualizarCantidad(productoId: number,nuevaCantidad: number){
 }
 
 //Metodo para obtener los productos del carrito con un arreglo 
-obtenerProductos():{producto:Producto;cantidad:number}[]{
+obtenerProductos():{producto:Productos;cantidad:number}[]{
   return this.carritoSubject.getValue();
 }
 //Metodo para calcular el total a pagar (precio*cantidad de cada producto)

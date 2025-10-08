@@ -76,6 +76,7 @@
    </div>
   </div>
 </div>
+<!--
 <div class="filtros">
   <div class="row mb-3">
     <div class="col md-3">
@@ -110,26 +111,5 @@
       </button>
     </div>
   </div>
-
-  <div class="card-container">
-    <ng-container *ngIf="filteredProducts && filteredProducts.lenght">
-      <ng-container ngFor="let producto of filteredProducts">
-        <div *ngIf="producto.disponibilidad" class="card">
-          <img [src]="producto.imagen" alt="{{producto.nombre}}" class="product-image">
-          <h2>{{producto.nombre}}</h2>
-          <p>{{producto.descripcion}}</p>
-          <p>Precio: {{producto.precio}}</p>
-          <p>Cantidad: {{producto.cantidad}}</p>
-          <p>Categoria: {{producto.categoria}}</p>
-          <p>Marca: {{producto.marca}}</p>
-
-          <button type="button" class="btn btn-outline-primary" (click)="agregar(productos)">agregar al carrito</button>
-          <button type="button" class="btn btn-outline-primary" (click)="agregarFavoritos(productoz)">agergar a favoritos</button>
-        </div>
-      </ng-container>
-    </ng-container>
-  </div>
-  <div *ngIf="filteredProducts.lenght === 0" class="text-muted">
-    No se encontraron productos que coincidan con los filtros.
-  </div>
 </div>
+-->

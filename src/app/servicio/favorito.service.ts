@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Producto } from '../modelos/produc.model';
+import { Productos } from '../modelos/produc.model';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -7,10 +7,10 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class FavoritoService {
 
-private favoritoSubject=new BehaviorSubject <{productos:Producto}[]>([]);
+private favoritoSubject=new BehaviorSubject <{productos:Productos}[]>([]);
   favorito$=this.favoritoSubject.asObservable();
 
-  agregarFavorito(productos:Producto){
+  agregarFavorito(productos:Productos){
     const favorito=this.favoritoSubject.getValue();
     const encontrado=favorito.find(p=>p.productos.id === productos.id);
 

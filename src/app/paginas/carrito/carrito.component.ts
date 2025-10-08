@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Producto } from '../../modelos/produc.model';
+import { Productos } from '../../modelos/produc.model';
 import { CarritoService } from '../../servicio/carrito.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
   styleUrl: './carrito.component.css'
 })
 export class CarritoComponent implements OnInit {
-productoEnCarrito:{producto:Producto; cantidad:number}[] = [] ;
+productoEnCarrito:{producto:Productos; cantidad:number}[] = [] ;
 
 constructor(private carritoService : CarritoService, private router:Router){};
 

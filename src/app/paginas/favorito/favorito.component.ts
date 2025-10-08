@@ -3,7 +3,7 @@ import { CarritoService } from '../../servicio/carrito.service';
 import { FavoritoService } from '../../servicio/favorito.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { Producto } from '../../modelos/produc.model';
+import { Productos } from '../../modelos/produc.model';
 
 @Component({
   selector: 'app-favorito',
@@ -14,7 +14,7 @@ import { Producto } from '../../modelos/produc.model';
 export class FavoritoComponent {
 constructor(private CarritoService: CarritoService, private FavoritoService:FavoritoService){};
   
-  productosEnFavorito:{productos:Producto}[] = [];
+  productosEnFavorito:{productos:Productos}[] = [];
  
   ngOnInit(): void{
     this.FavoritoService.favorito$.subscribe((productos)=>{
@@ -22,7 +22,7 @@ constructor(private CarritoService: CarritoService, private FavoritoService:Favo
     })
   }
   
-  agregar(productos:Producto, productosId:number){
+  agregar(productos:Productos, productosId:number){
     this.CarritoService.agregarAlCarrito(productos)
     alert('Se agrego al carrito ´•ω•̥`')
     this.FavoritoService.eliminarFavorito(productosId)    

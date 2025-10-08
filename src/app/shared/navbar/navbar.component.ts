@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink, RouterModule } from '@angular/router';
 import { CarritoService } from '../../servicio/carrito.service';
-import { Producto } from '../../modelos/produc.model';
+import { Productos } from '../../modelos/produc.model';
 import { CommonModule } from '@angular/common';
 
 
@@ -17,7 +17,7 @@ constructor(private carritoService: CarritoService){};
 
 ngOnInit(): void {
   //Escucha los cambios en el carrito para actualizar la cantidad total de productos
-  this.carritoService.carrito$.subscribe((productos: {producto: Producto,cantidad : number }[])=>{
+  this.carritoService.carrito$.subscribe((productos: {producto: Productos,cantidad : number }[])=>{
     this.cantidadProductos=productos.reduce((total,item)=>total + item.cantidad,0)//Suma la cantidad de productos
   })
 };
