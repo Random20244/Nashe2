@@ -1,11 +1,10 @@
+
 /*Estilos Generales*/
 .body{
     background-color: rgb(1, 168, 245);
     color:rgb(14, 240, 240);
     font-family:arial,sans-serif;
 }
-
-
 
 /*Contenedor de las tarjetas*/
 .card-container{
@@ -58,3 +57,212 @@ box-shadow: 0px 8px 16px rgba(rgb(16, 3, 202), rgb(123, 255, 0), rgb(89, 0, 255)
 background-color: rgb(255, 0, 0);
 }
 
+/* 🌐 Estilos generales */
+body {
+  background: linear-gradient(135deg, rgb(1, 168, 245), rgb(0, 110, 255));
+  color: rgb(240, 240, 240);
+  font-family: 'Poppins', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* 🧱 Contenedor de las tarjetas */
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 25px;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+}
+
+/* 🃏 Tarjeta individual */
+.card {
+  width: 18rem;
+  background: linear-gradient(180deg, rgb(150, 10, 140), rgb(90, 5, 85));
+  color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+/* 🌀 Efecto hover */
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(255, 0, 255, 0.25);
+}
+
+/* 🖼️ Imagen del producto */
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ✍️ Título y descripción */
+.card h2 {
+  font-size: 1.3rem;
+  margin: 10px 0;
+  color: #ffeb3b;
+}
+
+.card p {
+  font-size: 0.9rem;
+  padding: 0 10px 10px;
+  color: #e0e0e0;
+}
+
+/* 🔘 Botones */
+.card .btn {
+  background: linear-gradient(90deg, rgb(255, 174, 0), rgb(255, 80, 0));
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  margin: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.card .btn:hover {
+  background: linear-gradient(90deg, rgb(255, 60, 60), rgb(255, 0, 100));
+  transform: translateY(-2px);
+}
+
+/* 📱 Responsividad */
+@media (max-width: 600px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+}
+
+/* 🎛️ Contenedor principal */
+.filtros {
+  background: linear-gradient(135deg, #860f76, #d77406);
+  padding: 20px 25px;
+  border-radius: 20px;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.25);
+  max-width: 650px;
+  margin: 30px auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filtros:hover {
+  transform: scale(1.01);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* 🧩 Estructura tipo cuadrícula */
+.filtros .row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+/* 🧱 Cada bloque (categoría, marca, precio...) */
+.filtros .col {
+  background: rgba(0, 0, 0, 0.6);
+  border-left: 5px solid #5f0dd9;
+  border-radius: 12px;
+  padding: 12px 15px;
+  color: #00f6e3;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.filtros .col:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(100, 0, 255, 0.3);
+}
+
+/* 🏷 Etiquetas */
+.filtros label {
+  font-weight: 600;
+  color: #00fad9;
+  font-size: 0.95rem;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* 🧠 Inputs y selects */
+.form-select,
+.form-control {
+  border-radius: 8px;
+  border: 1px solid #00ffd9;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #000000;
+  padding: 7px;
+  width: 100%;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-select:focus,
+.form-control:focus {
+  border-color: #590da1;
+  box-shadow: 0 0 6px rgba(120, 0, 255, 0.4);
+  outline: none;
+}
+
+/* ⚙️ Botón de reset */
+button.btn {
+  background: linear-gradient(90deg, #7c00ff, #a400ff);
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  width: 100%;
+  padding: 8px;
+  transition: all 0.3s ease;
+}
+
+button.btn:hover {
+  background: linear-gradient(90deg, #590da1, #7c00ff);
+  transform: scale(1.05);
+}
+
+/* 📱 Responsividad */
+@media (max-width: 768px) {
+  .filtros .row {
+    grid-template-columns: 1fr;
+  }
+
+  .filtros {
+    padding: 15px;
+    max-width: 90%;
+  }
+}
+
+.no-results {
+  background: linear-gradient(135deg, #ff6b6b, #ffb347);
+  color: #000;
+  text-align: center;
+  padding: 20px 25px;
+  border-radius: 18px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  margin: 30px auto;
+  max-width: 450px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.no-results:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.no-results .emoji {
+  font-size: 2.2rem;
+  display: block;
+  margin-bottom: 10px;
+}

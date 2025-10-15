@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CarritoService } from '../../servicio/carrito.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { Productos } from '../../modelos/produc.model';
+import { Productos } from '../../modelos/productos.model';
 
 
 @Component({
