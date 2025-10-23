@@ -1,61 +1,106 @@
+
+/* --- SECCIÓN PRINCIPAL --- */
 .quienes-somos {
-  padding: 60px 20px;
-  max-width: 1000px;
-  margin: auto;
+  padding: 60px 30px;
+  max-width: 1100px;
+  margin: 60px auto;
   text-align: center;
-  background-color: #000000; 
-  border-radius: 10px;
-  margin-bottom: 30px;
-  box-shadow: 0 2px 8px rgba(104, 8, 8, 0.541);
+  background: linear-gradient(160deg, #000000, #1a002e);
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(147, 0, 255, 0.4);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
 }
 
+/* Brillo sutil en el fondo */
+.quienes-somos::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255, 215, 0, 0.1), transparent 70%);
+  animation: rotarBrillo 10s linear infinite;
+  z-index: 0;
+}
+
+@keyframes rotarBrillo {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.quienes-somos * {
+  position: relative;
+  z-index: 1;
+}
+
+/* --- TÍTULO --- */
 .quienes-somos h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #000000;
-  background-color: yellow;
-  border-radius: 50%;
+  font-size: 2.8rem;
+  margin-bottom: 25px;
+  color: gold;
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+  font-weight: 700;
+  letter-spacing: 1px;
+  animation: aparecer 1s ease forwards;
 }
 
+/* --- DESCRIPCIÓN --- */
 .quienes-somos p {
   font-size: 1.1rem;
   line-height: 1.8;
-  margin-bottom: 30px;
-  color: #000000;
-  background-color: #888;
-  border-radius: 50px;
+  margin: 0 auto 40px auto;
+  max-width: 800px;
+  color: #e2e2e2;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.1);
+  animation: aparecer 1.2s ease forwards;
 }
 
-.kronos{
-  background-color: gold;
-  border-radius: 10px;
-  text-align: center;
-  color: black ;
+/* --- IMAGEN PRINCIPAL --- */
+.quienes-somos img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid gold;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.quienes-somos img{
-  width: 150px;
-  height: 150px;
+.quienes-somos img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
 }
 
+/* --- EQUIPO --- */
 .equipo {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
+  gap: 35px;
+  margin-top: 40px;
 }
 
+/* --- TARJETAS DE MIEMBROS --- */
 .miembro {
-  background: white;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  max-width: 220px;
-  transition: transform 0.3s ease;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(123, 47, 247, 0.2);
+  max-width: 230px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  backdrop-filter: blur(5px);
 }
 
 .miembro:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
 }
 
 .miembro img {
@@ -63,15 +108,37 @@
   border-radius: 50%;
   height: 180px;
   object-fit: cover;
+  margin-bottom: 15px;
+  border: 2px solid gold;
 }
 
 .miembro h4 {
-  margin-top: 15px;
+  margin-top: 10px;
   margin-bottom: 5px;
+  color: #fff;
+  font-weight: 600;
 }
 
 .miembro span {
-  font-size: 0.9rem;
-  color: #888;
+  font-size: 0.95rem;
+  color: #d0bfff;
 }
 
+/* --- KRONOS --- */
+.kronos {
+  background: linear-gradient(90deg, gold, #ffdd88);
+  border-radius: 15px;
+  text-align: center;
+  color: #000;
+  font-weight: bold;
+  padding: 10px 20px;
+  display: inline-block;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+  margin-top: 20px;
+}
+
+/* --- ANIMACIONES --- */
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

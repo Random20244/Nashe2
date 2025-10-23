@@ -86,6 +86,14 @@ Productos: Productos []=[
     disponibilidad:true ,
     imagen:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ15hBGa0ew68jbfMzdDTzB_03aaMMMLl7opoiJWevMukcJh-eVvxpo8LbU0MXm7oUjZoY&usqp=CAU',
     categoria:'Nova',
+    marca:'Iphone'},
+    {id: 10 ,
+    nombre:'Gato stare' ,
+    descripcion:"Un gato con interrogantes y misterio en sus ojos, bastante incognito y farmeador de aura, sospechoso de actos criminales mucho ojo." ,
+    precio:16040 ,
+    disponibilidad:true ,
+    imagen:'https://media.tenor.com/TokrEVz73s4AAAAM/shut-the-frick-up.gif',
+    categoria:'Nova',
     marca:'Iphone'}
 ]
   

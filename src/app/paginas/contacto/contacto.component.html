@@ -1,5 +1,32 @@
-<form [formGroup]="miFormulario">
-    <label for="email">Email:</label>
-    <input id="email" FormCrontrolName="email">
-    <button [disabled]="miFormulario.invalid">Enviar</button>
-</form>
+<div class="contacto-container">
+  <h2>📧 Contáctanos</h2>
+
+  <form [formGroup]="miFormulario" (ngSubmit)="enviar()">
+    
+    <div class="form-group">
+      <label for="nombre">Nombre:</label>
+      <input id="nombre" formControlName="nombre" placeholder="Tu nombre completo" />
+      <small *ngIf="miFormulario.get('nombre')?.invalid && miFormulario.get('nombre')?.touched">
+        ⚠️ El nombre debe tener al menos 3 caracteres.
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input id="email" formControlName="email" placeholder="tu@email.com" />
+      <small *ngIf="miFormulario.get('email')?.invalid && miFormulario.get('email')?.touched">
+        ⚠️ Ingresa un correo electrónico válido.
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" formControlName="mensaje" rows="4" placeholder="Escribe tu mensaje..."></textarea>
+      <small *ngIf="miFormulario.get('mensaje')?.invalid && miFormulario.get('mensaje')?.touched">
+        ⚠️ El mensaje debe tener al menos 10 caracteres.
+      </small>
+    </div>
+
+    <button type="submit" [disabled]="miFormulario.invalid">Enviar</button>
+  </form>
+</div>

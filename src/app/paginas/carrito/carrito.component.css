@@ -1,5 +1,184 @@
-button  {
-    color: black;
-    transition: background 0.3s ease-in-out;
+/* --- CONTENEDOR PRINCIPAL --- */
+.container {
+  background: linear-gradient(135deg, #0a0a0a, #1b0033);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 0 25px rgba(123, 47, 247, 0.3);
+  animation: fadeIn 0.8s ease-in-out;
 }
 
+/* --- TÍTULO --- */
+h1 {
+  font-weight: 700;
+  color: gold;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #2b0066, #6f00ff);
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+}
+
+/* --- ALERTAS --- */
+.alert-danger {
+  background: rgba(255, 30, 30, 0.1);
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  color: #ffaaaa;
+  font-weight: 500;
+  border-radius: 12px;
+}
+
+.alert-warning {
+  background: rgba(255, 200, 0, 0.15);
+  border: 1px solid gold;
+  color: #fff7d6;
+  border-radius: 12px;
+}
+
+/* --- TABLA --- */
+.table {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.table thead {
+  background: linear-gradient(90deg, #6f00ff, #2b0066);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.table-hover tbody tr {
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.table-hover tbody tr:hover {
+  background: rgba(255, 215, 0, 0.08);
+  transform: scale(1.01);
+}
+
+/* --- IMÁGENES --- */
+.img-thumbnail {
+  border-radius: 10px;
+  border: 2px solid gold;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.img-thumbnail:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+/* --- BOTONES DE CANTIDAD --- */
+.btn-group button {
+  border-radius: 8px !important;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-danger {
+  border: 1px solid #ff5555;
+  color: #ff7777;
+}
+
+.btn-outline-success {
+  border: 1px solid #00ff99;
+  color: #00ff99;
+}
+
+.btn-outline-danger:hover {
+  background: #ff3d3d;
+  color: #fff;
+}
+
+.btn-outline-success:hover {
+  background: #00e37d;
+  color: #000;
+}
+
+/* --- BOTÓN ELIMINAR --- */
+.btn-outline-danger.btn-sm {
+  background: linear-gradient(90deg, #8b0000, #ff0000);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn-outline-danger.btn-sm:hover {
+  background: linear-gradient(90deg, #ff0000, #ff8800);
+  transform: scale(1.05);
+}
+
+/* --- TOTAL --- */
+.text-end h4 {
+  color: gold;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  font-weight: bold;
+}
+
+/* --- BOTÓN DE COMPRA --- */
+.btn-primary {
+  background: linear-gradient(90deg, #00c851, #007e33);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 255, 100, 0.6);
+}
+
+/* --- ANIMACIÓN DE APARICIÓN --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- ALERTAS --- */
+.alert-danger {
+  background: radial-gradient(circle at top left, #ff1e1e, #6b0000);
+  border: 2px solid rgba(255, 80, 80, 0.8);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 15px;
+  padding: 15px 20px;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.alert-warning {
+  background: radial-gradient(circle at top left, #ffcc00, #a85f00);
+  border: 2px solid rgba(255, 220, 100, 0.8);
+  color: #000;
+  font-weight: 700;
+  border-radius: 15px;
+  padding: 15px 20px;
+  box-shadow: 0 0 15px rgba(255, 200, 0, 0.5);
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* --- ALERTA DE ÉXITO (por si luego agregás al completar compra) --- */
+.alert-success {
+  background: linear-gradient(135deg, #00ff99, #006633);
+  border: 2px solid #00e07a;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 15px;
+  padding: 15px 20px;
+  box-shadow: 0 0 15px rgba(0, 255, 100, 0.4);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* --- ANIMACIÓN DE APARICIÓN --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

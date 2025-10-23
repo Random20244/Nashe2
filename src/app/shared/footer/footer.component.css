@@ -8,3 +8,77 @@ color: white;
 .etiqueta{
     color: white;
 }
+footer {
+  background: linear-gradient(135deg, #000000, #1b0a27, #df8107);
+  color: #ffffff;
+  padding: 25px 40px;
+  border-top: 2px solid #df8107;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.5);
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ✨ Efecto de brillo sutil en el fondo */
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 100%, rgba(223, 129, 7, 0.15), transparent 70%);
+  animation: footerGlow 6s infinite alternate ease-in-out;
+}
+
+@keyframes footerGlow {
+  0% { transform: translateX(-10%); opacity: 0.5; }
+  100% { transform: translateX(10%); opacity: 1; }
+}
+
+/* 🧭 Estructura general */
+footer .col-md-4 {
+  z-index: 1;
+}
+
+footer .etiqueta {
+  color: #f5f5f5;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 8px rgba(223, 129, 7, 0.6);
+}
+
+/* 📱 Íconos de redes */
+footer .nav a {
+  color: #df8107;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+footer .nav a:hover {
+  color: #fff;
+  text-shadow: 0 0 12px #df8107, 0 0 24px #df8107;
+  transform: scale(1.15);
+}
+
+/* 💡 Línea divisoria sutil */
+footer.border-top {
+  border-top: 1px solid rgba(223, 129, 7, 0.4) !important;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  footer {
+    text-align: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  footer .col-md-4 {
+    justify-content: center !important;
+  }
+
+  footer .nav {
+    justify-content: center !important;
+  }
+}
